@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Team | SolUmbra</title>
+    <style>
+        /* General Styles - Matching your Homepage */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+        
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .team-name { font-weight: bold; font-size: 1.2rem; color: #2c3e50; }
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { text-decoration: none; color: #34495e; font-weight: 500; }
+        .nav-links a:hover { color: #3498db; }
+
+        /* Team Header */
+        .team-header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+        .team-header h1 { font-size: 3rem; margin: 0; }
+
+        /* Team Sections Container */
+        .team-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Individual Member Section */
+        .member-section {
+            display: flex;
+            align-items: center;
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Member Image */
+        .member-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%; /* Makes the picture a circle */
+            margin-right: 40px;
+            border: 4px solid #3498db;
+        }
+
+        /* Member Text Info */
+        .member-info {
+            flex: 1;
+        }
+        .member-info h3 { margin-top: 0; color: #2c3e50; font-size: 1.5rem; }
+        .info-label { font-weight: bold; color: #3498db; }
+        .member-info p { margin: 5px 0; }
+
+        /* Responsive Tweaks for Mobile */
+        @media (max-width: 768px) {
+            .member-section { flex-direction: column; text-align: center; }
+            .member-image { margin-right: 0; margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="team-name">Charge4ward Presents</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="team.html">The Team</a></li>
+            <li><a href="mechanical.html">Mechanical</a></li>
+            <li><a href="electrical.html">Electrical</a></li>
+            <li><a href="acknowledgement.html">Acknowledgement</a></li>
+            <li><a href="posters.html">Posters</a></li>
+        </ul>
+    </nav>
+
+    <header class="team-header">
+        <h1>Meet the Team!</h1>
+    </header>
+
+    <div class="team-container">
+
+        <div class="member-section">
+            <img src="member1.jpg" alt="Team Member Name" class="member-image">
+            <div class="member-info">
+                <p><span class="info-label">Name:</span> Jane Doe</p>
+                <p><span class="info-label">Major:</span> Mechanical Engineering</p>
+                <p><span class="info-label">Description:</span> Jane is the lead systems designer focusing on the structural integrity of the SolUmbra frame and deployment mechanism.</p>
+            </div>
+        </div>
+
+        <div class="member-section">
+            <img src="member2.jpg" alt="Team Member Name" class="member-image">
+            <div class="member-info">
+                <p><span class="info-label">Name:</span> John Smith</p>
+                <p><span class="info-label">Major:</span> Electrical Engineering</p>
+                <p><span class="info-label">Description:</span> John manages the solar array integration and battery management systems for Charge4ward.</p>
+            </div>
+        </div>
+
+        <div class="member-section">
+            <img src="member3.jpg" alt="Team Member Name" class="member-image">
+            <div class="member-info">
+                <p><span class="info-label">Name:</span> Member Three</p>
+                <p><span class="info-label">Major:</span> Your Major</p>
+                <p><span class="info-label">Description:</span> Add a brief bio here about their contribution to the project.</p>
+            </div>
+        </div>
+
+        <div class="member-section">
+            <img src="member4.jpg" alt="Team Member Name" class="member-image">
+            <div class="member-info">
+                <p><span class="info-label">Name:</span> Member Four</p>
+                <p><span class="info-label">Major:</span> Your Major</p>
+                <p><span class="info-label">Description:</span> Add a brief bio here about their contribution to the project.</p>
+            </div>
+        </div>
+
+        <div class="member-section">
+            <img src="member5.jpg" alt="Team Member Name" class="member-image">
+            <div class="member-info">
+                <p><span class="info-label">Name:</span> Member Five</p>
+                <p><span class="info-label">Major:</span> Your Major</p>
+                <p><span class="info-label">Description:</span> Add a brief bio here about their contribution to the project.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: #999;">
+        &copy; 2026 Charge4ward
+    </footer>
+
+</body>
+</html>
