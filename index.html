@@ -24,30 +24,27 @@
         .team-name { font-weight: bold; font-size: 1.2rem; color: #2c3e50; }
 
         .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
-        
         .nav-links li { margin-left: 25px; }
-
         .nav-links a { text-decoration: none; color: #34495e; font-weight: 500; transition: color 0.3s; }
-        
         .nav-links a:hover { color: #3498db; }
 
-        /* Hero Section (The Layered Image/Text) */
+        /* Hero Section */
         .hero {
             position: relative;
-            height: 80vh; /* 80% of screen height */
+            height: 80vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            background-color: #2c3e50; /* Fallback color */
+            background-color: #2c3e50;
         }
 
         .hero img {
             position: absolute;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Keeps image from stretching */
-            filter: brightness(60%); /* Darkens image so text is readable */
+            object-fit: cover;
+            filter: brightness(60%);
         }
 
         .hero h1 {
@@ -61,62 +58,59 @@
         }
 
         /* Content Sections */
-        .content-container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
-        
+        .content-container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
         section { margin-bottom: 60px; }
-
         h2 { border-left: 5px solid #3498db; padding-left: 15px; color: #2c3e50; }
 
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid #eee; color: #777; }
+        /* Gallery - HORIZONTAL FIX */
+        .gallery-container {
+            display: flex;
+            flex-direction: row; 
+            flex-wrap: nowrap;      /* Prevents stacking */
+            align-items: center;    /* Vertically aligns arrows and images */
+            justify-content: space-between;
+            width: 100%;
+            margin: 40px 0;
+        }
 
+        .gallery-item {
+            flex: 0 0 28%;         /* Rigid width for images */
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;           
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: block;
+        }
+
+        .gallery-item p {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .gallery-arrow {
+            flex: 0 0 5%;
+            text-align: center;
+            font-size: 2rem;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid #eee; color: #777; margin-top: 50px; }
         .footer-logo {
-        width: 60px; /* Adjust this number to make the logo bigger or smaller */
-        height: auto;
-        margin-bottom: 10px;
-        opacity: 0.8; /* Makes the logo look slightly professional/subtle */
-        transition: opacity 0.3s;
+            width: 60px;
+            height: auto;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
 
-/* This container FORCES everything into one horizontal line */
-.gallery-container {
-    display: flex;
-    flex-direction: row; 
-    flex-wrap: nowrap;      /* CRITICAL: Prevents vertical stacking */
-    align-items: center;    /* Keeps arrows centered with the middle of the images */
-    justify-content: center;
-    width: 100%;
-    margin: 40px 0;
-    gap: 5px;               /* Small gap to keep them tight */
-}
-
-/* Each of the 3 image boxes takes up roughly 28% of the width */
-.gallery-item {
-    flex: 0 0 28%;         /* Does not grow, does not shrink, stays at 28% */
-    text-align: center;
-}
-
-.gallery-item img {
-    width: 100%;           /* Fills the 28% box */
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: block;        /* Removes bottom white space */
-}
-
-.gallery-item p {
-    margin-top: 8px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-/* Arrows take up about 4% of the width */
-.gallery-arrow {
-    flex: 0 0 4%;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #3498db;
-    font-weight: bold;
-}
-            
     </style>
 </head>
 <body>
@@ -142,68 +136,49 @@
         
         <section id="introduction">
             <h2>Introduction</h2>
-            <p> SolUmbra is a portable, human-scale microgrid designed to provide reliable, renewable energy in environments where the grid is either unavailable or 
-                untrustworthy. The system integrates a ruggedized wheeled cart with a semi-autonomous deployable solar array and an onboard 
-                energy storage subsystem. <p>
-                    
-          </p>  Our mission at Charge4ward is to bridge the gap between renewable energy and remote accessibility. SolUmbra is not just a charging 
-                station; it is a rapid-deployment power solution built for the people who need it most—from disaster relief teams and medical shelters to NGOs and community 
-                response groups. By prioritizing safety and ease of use for non-technical users, we ensure that clean power is available at the push of a button, anywhere 
-                the sun shines.
-            </p>
+            <p>SolUmbra is a portable, human-scale microgrid designed to provide reliable, renewable energy in environments where the grid is either unavailable or untrustworthy. The system integrates a ruggedized wheeled cart with a semi-autonomous deployable solar array and an onboard energy storage subsystem.</p>
+            <p>Our mission at Charge4ward is to bridge the gap between renewable energy and remote accessibility. SolUmbra is not just a charging station; it is a rapid-deployment power solution built for the people who need it most—from disaster relief teams and medical shelters to NGOs and community response groups. By prioritizing safety and ease of use for non-technical users, we ensure that clean power is available at the push of a button, anywhere the sun shines.</p>
         </section>
 
-<section id="problem-statement">
+        <section id="problem-statement">
             <h2>Problem Statement</h2>
             <h3>The Challenge of Energy Accessibility</h3>
-            <p>
-                Many global locations lack reliable access to clean electrical power, forcing a dependency on fuel-based generators that are loud, high-maintenance, 
-                and environmentally harmful. With the Emergency Relief Solar Kit market hitting $1.23 billion in 2024, there is a massive demand for sustainable energy in
-                disaster response, refugee support, and remote electrification.
-            </p>
-            <p>
-                The engineering challenge lies in creating a system that is both portable and resilient enough for field use. Current solutions often lack the durability for harsh environments or the efficiency to provide dependable electricity without constant manual adjustment.
-            </p>
+            <p>Many global locations lack reliable access to clean electrical power, forcing a dependency on fuel-based generators that are loud, high-maintenance, and environmentally harmful. With the Emergency Relief Solar Kit market hitting $1.23 billion in 2024, there is a massive demand for sustainable energy in disaster response, refugee support, and remote electrification.</p>
+            <p>The engineering challenge lies in creating a system that is both portable and resilient enough for field use. Current solutions often lack the durability for harsh environments or the efficiency to provide dependable electricity without constant manual adjustment.</p>
         </section>
 
         <section id="our-solution">
             <h2>Our Solution</h2>
-            <p>
-                By using solar power and integrated onboard storage, SolUmbra delivers dependable electricity without relying on grid access or fuel. Our design follows three core concepts:
-            </p>
+            <p>By using solar power and integrated onboard storage, SolUmbra delivers dependable electricity without relying on grid access or fuel. Our design follows three core concepts:</p>
             <ul>
                 <li><strong>Energy Management:</strong> Ability to input, filter, and output usable solar energy efficiently.</li>
                 <li><strong>Durability:</strong> Ruggedized construction to make the system deployable in harsher, outdoor environments.</li>
                 <li><strong>Intelligence:</strong> Semi-autonomous operation, adjusting the array position for optimal sunlight capture throughout the day.</li>
             </ul>
+
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="SolUmbra Concept Sketch.png" alt="Sketch">
+                    <p>Concept Sketch</p>
+                </div>
+                
+                <div class="gallery-arrow">&#10141;</div>
+                
+                <div class="gallery-item">
+                    <img src="SolUmbra Concept Rendering.png" alt="Rendering">
+                    <p>Concept Rendering</p>
+                </div>
+                
+                <div class="gallery-arrow">&#10141;</div>
+                
+                <div class="gallery-item">
+                    <img src="SolUmbra Final Prototype.png" alt="Prototype">
+                    <p>Final Prototype</p>
+                </div>
+            </div>
         </section>
-        </section>
 
-<div class="gallery-container">
-    <div class="gallery-item">
-        <img src="SolUmbra Concept Sketch.png" alt="Sketch">
-        <p>Concept Sketch</p>
-    </div>
-    
-    <div class="gallery-arrow">&#10141;</div>
-    
-    <div class="gallery-item">
-        <img src="SolUmbra Concept Rendering.png" alt="Rendering">
-        <p>Concept Rendering</p>
-    </div>
-    
-    <div class="gallery-arrow">&#10141;</div>
-    
-    <div class="gallery-item">
-        <img src="SolUmbra Final Prototype.png" alt="Prototype">
-        <p>Final Prototype</p>
-    </div>
-</div>
-
-
-</html>
-
-    <footer>
+    </div> <footer>
         <img src="Charge4ward Logo.png" alt="Charge4ward Logo" class="footer-logo">
         <p>&copy; 2026 Charge4ward | SolUmbra Project</p>
     </footer>
