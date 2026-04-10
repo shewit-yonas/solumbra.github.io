@@ -133,9 +133,11 @@
             <div class="milestone-entry">
                 <img src="placeholder_elec.jpg" alt="Placeholder alt text" class="milestone-image">
                 <div class="milestone-text">
-                    <h3>This is a placeholder title for a milestone</h3>
+                    <h3>MPPT Voltage Regulation & Irradiance Simulation</h3>
                     <p>
-                        Placeholder text 
+                        We validated the feasibility of our power distribution system by simulating solar irradiance using a bench power supply (12V–20V). The MPPT 
+                        charge controller successfully maintained battery output voltage within a tight ±2% tolerance (11.9V to 12.3V). This test confirmed that our 
+                        selected regulation hardware can provide stable power to the MCU and sensors even under rapid fluctuations caused by shading or clouds.
                     </p>
                 </div>
             </div>
@@ -143,12 +145,27 @@
             <div class="milestone-entry">
                 <img src="placeholder_elec.jpg" alt="Placeholder alt text" class="milestone-image">
                 <div class="milestone-text">
-                    <h3>This is a placeholder title for a milestone</h3>
+                    <h3>Power Conversion Efficiency Audit</h3>
                     <p>
-                        Placeholder text for more in depth description
+                        An efficiency audit was performed across the system’s three voltage rails. While the DC-DC stages (Buck and Boost) performed at an exceptional 93% 
+                        and 94.5% efficiency respectively, the DC-AC inverter was identified as a bottleneck at 65.5% efficiency. This analysis provided the "green light" 
+                        for our DC-only pathway (22.06% total efficiency) while highlighting the need for a higher-efficiency inverter in the next design phase.
                     </p>
                 </div>
             </div>
+
+            <div class="milestone-entry">
+                <img src="placeholder_elec.jpg" alt="Placeholder alt text" class="milestone-image">
+                <div class="milestone-text">
+                    <h3>Battery Capacity & Solar Yield Modeling</h3>
+                    <p>
+                        We finalized the energy storage architecture centered on a 12.8V 50Ah LiFePO4 battery, providing 640 Wh of total storage. Theoretical modeling of 
+                        a 100W panel indicated a daily yield of 210–337 Wh, which is sufficient to cover the system's control electronics (50–120 Wh/day) while leaving a 
+                        surplus for external device charging. This confirms our power budget is well-balanced for the project's intended use-case.
+                    </p>
+                </div>
+            </div>
+            
         </div>
 
         <h2 class="quarter-heading">Q2 Milestones</h2>
