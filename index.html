@@ -79,48 +79,42 @@
 /* Gallery Side-by-Side Layout */
 .gallery-container {
     display: flex;
-    align-items: center; /* Centers arrows with images */
-    justify-content: space-between;
+    flex-direction: row; /* Forces horizontal alignment */
+    flex-wrap: nowrap;   /* Prevents images from jumping to the next line */
+    align-items: center; 
+    justify-content: center;
     margin-top: 40px;
-    gap: 15px; /* Space between items */
+    gap: 10px;           /* Narrower gap to save space */
+    width: 100%;
 }
 
 .gallery-item {
     text-align: center;
-    flex: 1; /* Makes all 3 image boxes the same width */
+    /* We limit the width so 3 images + 2 arrows fit in one row */
+    width: 25%; 
 }
 
 .gallery-item img {
-    width: 100%; /* Scales image to fit the 1/3rd width */
+    width: 100%;         /* Fits the 25% container */
+    max-width: 250px;    /* Prevents them from getting too big */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .gallery-item p {
-    margin-top: 12px;
+    margin-top: 10px;
     font-weight: bold;
     color: #2c3e50;
+    font-size: 0.85rem;   /* Smaller text to match smaller pics */
 }
 
 .gallery-arrow {
-    font-size: 2rem;
+    font-size: 1.5rem;    /* Smaller arrows */
     color: #3498db;
     font-weight: bold;
-    user-select: none;
+    flex-shrink: 0;       /* Prevents arrow from being squished */
 }
-
-/* Mobile Fix: If the screen is small, stack them so they are readable */
-@media (max-width: 768px) {
-    .gallery-container {
-        flex-direction: column;
-    }
-    .gallery-arrow {
-        transform: rotate(90deg); /* Points arrow down on mobile */
-        margin: 20px 0;
-    }
-}
-            
             
     </style>
 </head>
@@ -187,21 +181,17 @@
 <section id="progression">
     <div class="gallery-container">
         <div class="gallery-item">
-            <img src="SolUmbra Concept Sketch.png" alt="Concept Sketch">
+            <img src="SolUmbra Concept Sketch.png" alt="Sketch">
             <p>Concept Sketch</p>
         </div>
-
         <div class="gallery-arrow">&#10141;</div>
-
         <div class="gallery-item">
-            <img src="SolUmbra Concept Rendering.png" alt="Concept Rendering">
+            <img src="SolUmbra Concept Rendering.png" alt="Rendering">
             <p>Concept Rendering</p>
         </div>
-
         <div class="gallery-arrow">&#10141;</div>
-
         <div class="gallery-item">
-            <img src="SolUmbra Final Prototype.png" alt="Final Prototype">
+            <img src="SolUmbra Final Prototype.png" alt="Prototype">
             <p>Final Prototype</p>
         </div>
     </div>
