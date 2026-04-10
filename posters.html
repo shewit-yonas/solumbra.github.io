@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posters | SolUmbra</title>
+    <style>
+        /* General Styles */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: #333; background: #fdfdfd; }
+        
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .team-name { display: flex; align-items: center; font-weight: bold; font-size: 1.2rem; color: #2c3e50; }
+        .nav-logo { height: 30px; width: auto; margin-right: 10px; }
+
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { text-decoration: none; color: #34495e; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #3498db; }
+
+        /* Posters Grid */
+        .content-container { max-width: 1100px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        h1 { color: #2c3e50; margin-bottom: 40px; border-bottom: 2px solid #3498db; display: inline-block; padding-bottom: 10px; }
+
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Exactly 2 per row */
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .poster-item { text-align: center; }
+
+        /* Hover Effect Container */
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            background: #000;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+            opacity: 0.7;
+        }
+
+        /* Expand Button on Hover */
+        .expand-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            background: rgba(52, 152, 219, 0.3); /* Transparent blue tint */
+        }
+
+        .image-container:hover .expand-overlay { opacity: 1; }
+
+        .poster-caption { margin-top: 15px; font-weight: 500; color: #34495e; font-size: 1rem; }
+
+        /* MODAL (FULL SCREEN) STYLES */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px; right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .poster-grid { grid-template-columns: 1fr; } /* Stack on mobile */
+        }
+
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid #eee; color: #777; margin-top: 80px; }
+        .footer-logo { width: 60px; height: auto; margin-bottom: 10px; opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="team-name">
+            <img src="Charge4ward Logo.png" alt="Logo" class="nav-logo">
+            Charge4ward
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="team.html">The Team</a></li>
+            <li><a href="mechanical.html">Mechanical</a></li>
+            <li><a href="electrical.html">Electrical</a></li>
+            <li><a href="acknowledgements.html">Acknowledgements</a></li>
+            <li><a href="posters.html">Posters</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-container">
+        <h1>Project Posters</h1>
+        
+        <div class="poster-grid">
+            <div class="poster-item">
+                <div class="image-container" onclick="openModal('poster1.jpg')">
+                    <img src="poster1.jpg" alt="Technical Poster 1">
+                    <div class="expand-overlay">EXPAND</div>
+                </div>
+                <p class="poster-caption">Quarter 1: Preliminary Design Review Poster</p>
+            </div>
+
+            <div class="poster-item">
+                <div class="image-container" onclick="openModal('poster2.jpg')">
+                    <img src="poster2.jpg" alt="Technical Poster 2">
+                    <div class="expand-overlay">EXPAND</div>
+                </div>
+                <p class="poster-caption">Quarter 2: Structural & Electrical Integration</p>
+            </div>
+
+            <div class="poster-item">
+                <div class="image-container" onclick="openModal('poster3.jpg')">
+                    <img src="poster3.jpg" alt="Technical Poster 3">
+                    <div class="expand-overlay">EXPAND</div>
+                </div>
+                <p class="poster-caption">Quarter 3: Final Prototype Validation</p>
+            </div>
+
+            <div class="poster-item">
+                <div class="image-container" onclick="openModal('poster4.jpg')">
+                    <img src="poster4.jpg" alt="Technical Poster 4">
+                    <div class="expand-overlay">EXPAND</div>
+                </div>
+                <p class="poster-caption">Senior Design Symposium Poster</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
+
+    <footer>
+        <img src="Charge4ward Logo.png" alt="Charge4ward Logo" class="footer-logo">
+        <p>&copy; 2026 Charge4ward | SolUmbra Project</p>
+    </footer>
+
+    <script>
+        function openModal(imgSrc) {
+            document.getElementById("myModal").style.display = "flex";
+            document.getElementById("fullImage").src = imgSrc;
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Close modal if user clicks outside the image
+        window.onclick = function(event) {
+            let modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
