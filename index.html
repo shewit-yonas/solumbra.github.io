@@ -21,6 +21,21 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
+/* Navigation Logo and Team Name Alignment */
+        .team-name { 
+            display: flex; 
+            align-items: center; 
+            font-weight: bold; 
+            font-size: 1.2rem; 
+            color: #2c3e50; 
+        }
+
+        .nav-logo {
+            height: 30px; /* Adjust height to fit your bar */
+            width: auto;
+            margin-right: 10px; /* Space between logo and text */
+        }
+        
         .team-name { font-weight: bold; font-size: 1.2rem; color: #2c3e50; }
 
         .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
@@ -115,8 +130,11 @@
 </head>
 <body>
 
-    <nav>
-        <div class="team-name">Charge4ward </div>
+   <nav>
+        <div class="team-name">
+            <img src="Charge4ward Logo.png" alt="Logo" class="nav-logo">
+            Charge4ward
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="team.html">The Team</a></li>
@@ -126,7 +144,6 @@
             <li><a href="posters.html">Posters</a></li>
         </ul>
     </nav>
-
     <div class="hero">
         <img src="prototype.jpg" alt="SolUmbra Final Prototype">
         <h1>SolUmbra</h1>
