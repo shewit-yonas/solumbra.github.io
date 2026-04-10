@@ -76,56 +76,50 @@
         opacity: 0.8; /* Makes the logo look slightly professional/subtle */
         transition: opacity 0.3s;
 
-/* Gallery Layout */
-        .gallery-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 40px;
-            gap: 10px;
-        }
+/* Gallery Side-by-Side Layout */
+.gallery-container {
+    display: flex;
+    align-items: center; /* Centers arrows with images */
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 15px; /* Space between items */
+}
 
-        .gallery-item {
-            text-align: center;
-            flex: 1;
-        }
+.gallery-item {
+    text-align: center;
+    flex: 1; /* Makes all 3 image boxes the same width */
+}
 
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
+.gallery-item img {
+    width: 100%; /* Scales image to fit the 1/3rd width */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-        .gallery-item img:hover {
-            transform: scale(1.05); /* Slight zoom on hover */
-        }
+.gallery-item p {
+    margin-top: 12px;
+    font-weight: bold;
+    color: #2c3e50;
+}
 
-        .gallery-item p {
-            margin-top: 10px;
-            font-weight: bold;
-            color: #2c3e50;
-            font-size: 0.9rem;
-        }
+.gallery-arrow {
+    font-size: 2rem;
+    color: #3498db;
+    font-weight: bold;
+    user-select: none;
+}
 
-        .gallery-arrow {
-            font-size: 2rem;
-            color: #3498db;
-            font-weight: bold;
-            user-select: none;
-        }
-
-        /* Responsive Mobile View */
-        @media (max-width: 768px) {
-            .gallery-container {
-                flex-direction: column;
-            }
-            .gallery-arrow {
-                transform: rotate(90deg); /* Point arrows down on mobile */
-                margin: 10px 0;
-            }
-        }
+/* Mobile Fix: If the screen is small, stack them so they are readable */
+@media (max-width: 768px) {
+    .gallery-container {
+        flex-direction: column;
+    }
+    .gallery-arrow {
+        transform: rotate(90deg); /* Points arrow down on mobile */
+        margin: 20px 0;
+    }
+}
             
             
     </style>
@@ -191,29 +185,30 @@
         </section>
 
 <section id="progression">
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <img src="SolUmbra Concept Sketch.png" alt="Concept Sketch">
-                    <p>Concept Sketch</p>
-                </div>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="SolUmbra Concept Sketch.png" alt="Concept Sketch">
+            <p>Concept Sketch</p>
+        </div>
 
-                <div class="gallery-arrow">&#10141;</div>
+        <div class="gallery-arrow">&#10141;</div>
 
-                <div class="gallery-item">
-                    <img src="SolUmbra Concept Rendering.png" alt="Concept Rendering">
-                    <p>Concept Rendering</p>
-                </div>
+        <div class="gallery-item">
+            <img src="SolUmbra Concept Rendering.png" alt="Concept Rendering">
+            <p>Concept Rendering</p>
+        </div>
 
-                <div class="gallery-arrow">&#10141;</div>
+        <div class="gallery-arrow">&#10141;</div>
 
-                <div class="gallery-item">
-                    <img src="SolUmbra Final Prototype.png" alt="Final Prototype">
-                    <p>Final Prototype</p>
-                </div>
-            </div>
-        </section>
+        <div class="gallery-item">
+            <img src="SolUmbra Final Prototype.png" alt="Final Prototype">
+            <p>Final Prototype</p>
+        </div>
+    </div>
+</section>
         
     </div>
+</section>
 
 
 </html>
