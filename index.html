@@ -76,6 +76,58 @@
         opacity: 0.8; /* Makes the logo look slightly professional/subtle */
         transition: opacity 0.3s;
 
+/* Gallery Layout */
+        .gallery-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 10px;
+        }
+
+        .gallery-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        .gallery-item p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 0.9rem;
+        }
+
+        .gallery-arrow {
+            font-size: 2rem;
+            color: #3498db;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        /* Responsive Mobile View */
+        @media (max-width: 768px) {
+            .gallery-container {
+                flex-direction: column;
+            }
+            .gallery-arrow {
+                transform: rotate(90deg); /* Point arrows down on mobile */
+                margin: 10px 0;
+            }
+        }
+            
+            
     </style>
 </head>
 <body>
@@ -93,7 +145,7 @@
     </nav>
 
     <div class="hero">
-        <img src="prototype.jpg" alt="SolUmbra Prototype">
+        <img src="prototype.jpg" alt="SolUmbra Final Prototype">
         <h1>SolUmbra</h1>
     </div>
 
@@ -136,6 +188,29 @@
                 <li><strong>Intelligence:</strong> Semi-autonomous operation, adjusting the array position for optimal sunlight capture throughout the day.</li>
             </ul>
         </section>
+        </section>
+
+<section id="progression">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="SolUmbra Concept Sketch.png" alt="Concept Sketch">
+                    <p>Concept Sketch</p>
+                </div>
+
+                <div class="gallery-arrow">&#10141;</div>
+
+                <div class="gallery-item">
+                    <img src="SolUmbra Concept Rendering.png" alt="Concept Rendering">
+                    <p>Concept Rendering</p>
+                </div>
+
+                <div class="gallery-arrow">&#10141;</div>
+
+                <div class="gallery-item">
+                    <img src="SolUmbra Final Prototype.png" alt="Final Prototype">
+                    <p>Final Prototype</p>
+                </div>
+            </div>
         </section>
         
     </div>
