@@ -76,44 +76,45 @@
         opacity: 0.8; /* Makes the logo look slightly professional/subtle */
         transition: opacity 0.3s;
 
-/* Gallery Side-by-Side Layout */
+/* This container FORCES everything into one horizontal line */
 .gallery-container {
     display: flex;
-    flex-direction: row; /* Forces horizontal alignment */
-    flex-wrap: nowrap;   /* Prevents images from jumping to the next line */
-    align-items: center; 
+    flex-direction: row; 
+    flex-wrap: nowrap;      /* CRITICAL: Prevents vertical stacking */
+    align-items: center;    /* Keeps arrows centered with the middle of the images */
     justify-content: center;
-    margin-top: 40px;
-    gap: 10px;           /* Narrower gap to save space */
     width: 100%;
+    margin: 40px 0;
+    gap: 5px;               /* Small gap to keep them tight */
 }
 
+/* Each of the 3 image boxes takes up roughly 28% of the width */
 .gallery-item {
+    flex: 0 0 28%;         /* Does not grow, does not shrink, stays at 28% */
     text-align: center;
-    /* We limit the width so 3 images + 2 arrows fit in one row */
-    width: 25%; 
 }
 
 .gallery-item img {
-    width: 100%;         /* Fits the 25% container */
-    max-width: 250px;    /* Prevents them from getting too big */
+    width: 100%;           /* Fills the 28% box */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: block;        /* Removes bottom white space */
 }
 
 .gallery-item p {
-    margin-top: 10px;
+    margin-top: 8px;
+    font-size: 0.8rem;
     font-weight: bold;
-    color: #2c3e50;
-    font-size: 0.85rem;   /* Smaller text to match smaller pics */
 }
 
+/* Arrows take up about 4% of the width */
 .gallery-arrow {
-    font-size: 1.5rem;    /* Smaller arrows */
+    flex: 0 0 4%;
+    text-align: center;
+    font-size: 1.5rem;
     color: #3498db;
     font-weight: bold;
-    flex-shrink: 0;       /* Prevents arrow from being squished */
 }
             
     </style>
@@ -178,24 +179,26 @@
         </section>
         </section>
 
-<section id="progression">
-    <div class="gallery-container">
-        <div class="gallery-item">
-            <img src="SolUmbra Concept Sketch.png" alt="Sketch">
-            <p>Concept Sketch</p>
-        </div>
-        <div class="gallery-arrow">&#10141;</div>
-        <div class="gallery-item">
-            <img src="SolUmbra Concept Rendering.png" alt="Rendering">
-            <p>Concept Rendering</p>
-        </div>
-        <div class="gallery-arrow">&#10141;</div>
-        <div class="gallery-item">
-            <img src="SolUmbra Final Prototype.png" alt="Prototype">
-            <p>Final Prototype</p>
-        </div>
+<div class="gallery-container">
+    <div class="gallery-item">
+        <img src="SolUmbra Concept Sketch.png" alt="Sketch">
+        <p>Concept Sketch</p>
     </div>
-</section>
+    
+    <div class="gallery-arrow">&#10141;</div>
+    
+    <div class="gallery-item">
+        <img src="SolUmbra Concept Rendering.png" alt="Rendering">
+        <p>Concept Rendering</p>
+    </div>
+    
+    <div class="gallery-arrow">&#10141;</div>
+    
+    <div class="gallery-item">
+        <img src="SolUmbra Final Prototype.png" alt="Prototype">
+        <p>Final Prototype</p>
+    </div>
+</div>
         
     </div>
 </section>
