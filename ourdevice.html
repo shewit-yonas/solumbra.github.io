@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Device | SolUmbra</title>
+    <style>
+        /* General Styles */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: #333; background: #fafafa; }
+        
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .team-name { display: flex; align-items: center; font-weight: bold; font-size: 1.2rem; color: #2c3e50; }
+        .nav-logo { height: 30px; width: auto; margin-right: 10px; }
+
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { text-decoration: none; color: #34495e; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #3498db; }
+
+        /* Page Title */
+        .page-header {
+            text-align: center;
+            padding: 60px 20px;
+            background: #2c3e50;
+            color: white;
+        }
+
+        .page-header h1 { margin: 0; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Alternating Feature Sections */
+        .content-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+        .feature-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+            gap: 50px;
+        }
+
+        /* This is the magic line that flips every second row */
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-image {
+            flex: 1;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: block;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-top: 0;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .feature-text p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Mobile View - Stack them normally on small screens */
+        @media (max-width: 768px) {
+            .feature-row, .feature-row:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+            }
+            .feature-text h2 { border-left: none; padding-left: 0; }
+        }
+
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid #eee; color: #777; margin-top: 60px; }
+        .footer-logo { width: 60px; height: auto; margin-bottom: 10px; opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="team-name">
+            <img src="Charge4ward Logo.png" alt="Logo" class="nav-logo">
+            Charge4ward
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ourdevice.html">Our Device</a></li>
+            <li><a href="mechanical.html">Mechanical</a></li>
+            <li><a href="electrical.html">Electrical</a></li>
+            <li><a href="team.html">The Team</a></li>
+            <li><a href="acknowledgements.html">Acknowledgements</a></li>
+            <li><a href="posters.html">Posters</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>SolUmbra's Features</h1>
+    </header>
+
+    <div class="content-container">
+        
+        <div class="feature-row">
+            <div class="feature-image">
+                <img src="feature.jpg" alt="Feature placeholder">
+            </div>
+            <div class="feature-text">
+                <h2>Feature placeholder</h2>
+                <p>
+                    Feature placeholder
+                </p>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-image">
+                <img src="Feature placeholder.jpg" alt="Feature placeholder">
+            </div>
+            <div class="feature-text">
+                <h2>Feature placeholder</h2>
+                <p>
+                    Feature placeholder
+                </p>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-image">
+                <img src="chassis-feature.jpg" alt="Ruggedized Chassis">
+            </div>
+            <div class="feature-text">
+                <h2>Feature placeholder</h2>
+                <p>
+                Feature placeholder   
+                </p>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-image">
+                <img src="Feature placeholder.jpg" alt="Feature placeholder">
+            </div>
+            <div class="feature-text">
+                <h2>Feature placeholder</h2>
+                <p>
+                    Feature placeholder
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <img src="Charge4ward Logo.png" alt="Charge4ward Logo" class="footer-logo">
+        <p>&copy; 2026 Charge4ward | SolUmbra Project</p>
+    </footer>
+
+</body>
+</html>
